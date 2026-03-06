@@ -1,100 +1,161 @@
-Terraform AWS VPC Infrastructure 🚀
+# Terraform AWS VPC Infrastructure
 
+![Terraform](https://img.shields.io/badge/Terraform-IaC-purple)
+![AWS](https://img.shields.io/badge/AWS-Cloud-orange)
+![DevOps](https://img.shields.io/badge/DevOps-Automation-blue)
+![Status](https://img.shields.io/badge/Project-Active-green)
 
+## Project Overview
 
+This project demonstrates how to provision a **production-style AWS networking infrastructure** using **Terraform Infrastructure as Code (IaC)**.
 
+The infrastructure includes:
 
+- Custom VPC
+- Public Subnets
+- Private Subnets
+- Internet Gateway
+- Route Tables
+- Route Table Associations
 
+This project follows **DevOps best practices for automated infrastructure provisioning**.
 
+---
 
+## Architecture
 
+```
+               Internet
+                   |
+            Internet Gateway
+                   |
+              Public Subnet
+                   |
+            Route Table (0.0.0.0/0)
+                   |
+               VPC Network
+                   |
+             Private Subnet
+```
 
-Infrastructure as Code project that provisions a production-style AWS networking environment using Terraform on Amazon Web Services.
+---
 
-This project creates a secure VPC architecture with public and private networking components following real DevOps infrastructure design.
+## Technologies Used
 
-Architecture 🌐
-                Internet
-                   │
-           Internet Gateway
-                   │
-                 VPC
-             10.0.0.0/16
-                   │
-        ┌──────────┴──────────┐
-        │                     │
-   Public Subnet         Private Subnet
-   10.0.1.0/24           10.0.2.0/24
-        │                     │
-    NAT Gateway        Private Resources
-        │
-   Public Route Table
-Tech Stack ⚙️
-Tool	Purpose
-Terraform	Infrastructure as Code
-Amazon Web Services	Cloud Provider
-Git	Version Control
-GitHub	Code Repository
-Project Structure 📁
+- Terraform
+- AWS VPC
+- AWS Subnets
+- AWS Internet Gateway
+- AWS Route Tables
+- Git & GitHub
+
+---
+
+## Project Structure
+
+```
 terraform-vpc-project/
 │
 ├── provider.tf
-├── main.tf
+├── vpc.tf
+├── subnet.tf
+├── internet_gateway.tf
+├── route_table.tf
 ├── variables.tf
-├── terraform.tfvars
 ├── outputs.tf
-├── .gitignore
 └── README.md
-Terraform Workflow ⚡
+```
+
+---
+
+## Infrastructure Created
+
+| Resource | Description |
+|--------|-------------|
+| VPC | Custom Virtual Private Cloud |
+| Public Subnet | Accessible from Internet |
+| Private Subnet | Internal resources |
+| Internet Gateway | Connects VPC to internet |
+| Route Table | Controls network routing |
+
+---
+
+## Terraform Commands Used
 
 Initialize Terraform
 
+```
 terraform init
+```
 
-Check configuration
+Validate configuration
 
+```
 terraform validate
-
-Format code
-
-terraform fmt
+```
 
 Preview infrastructure
 
+```
 terraform plan
+```
 
 Create infrastructure
 
+```
 terraform apply
+```
 
 Destroy infrastructure
 
+```
 terraform destroy
-Infrastructure Created 🏗️
+```
 
-✔ VPC
-✔ Public Subnet
-✔ Private Subnet
-✔ Internet Gateway
-✔ NAT Gateway
-✔ Elastic IP
-✔ Public Route Table
-✔ Private Route Table
-✔ Route Table Associations
+---
 
-DevOps Concepts Demonstrated
+## How to Use
 
-Infrastructure as Code
+1. Clone the repository
 
-Cloud Networking
+```
+git clone https://github.com/Chandangadewar/Terraform-vpc-project.git
+```
 
-Automated Infrastructure Provisioning
+2. Navigate to the project
 
-Git-based Infrastructure Management
+```
+cd Terraform-vpc-project
+```
 
-Production VPC Architecture
+3. Initialize Terraform
 
-Author 👨‍💻
+```
+terraform init
+```
 
-Chandan Gadewar
-Aspiring DevOps Engineer
+4. Deploy infrastructure
+
+```
+terraform apply
+```
+
+---
+
+## Learning Outcome
+
+This project helps understand:
+
+- Infrastructure as Code
+- AWS Networking Fundamentals
+- Terraform Resource Management
+- DevOps Infrastructure Automation
+
+---
+
+## Author
+
+**Chandan Gadewar**
+
+GitHub:  
+https://github.com/Chandangadewar
